@@ -1,0 +1,132 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Plus Jakarta Sans";
+  src: url("/assets/fonts/PlusJakartaSans.woff2") format("woff2");
+  font-weight: 300 700;
+  font-display: swap;
+}
+
+@layer base {
+  :root {
+    --radius: 0.75rem;
+    /* Light mode */
+    --background: 0.97 0.005 250;
+    --foreground: 0.15 0.02 260;
+    --card: 1 0 0;
+    --card-foreground: 0.15 0.02 260;
+    --popover: 1 0 0;
+    --popover-foreground: 0.15 0.02 260;
+    --primary: 0.55 0.22 264;
+    --primary-foreground: 0.98 0 0;
+    --secondary: 0.92 0.03 260;
+    --secondary-foreground: 0.2 0.02 260;
+    --muted: 0.94 0.02 260;
+    --muted-foreground: 0.5 0.04 260;
+    --accent: 0.65 0.2 295;
+    --accent-foreground: 0.98 0 0;
+    --destructive: 0.577 0.245 27.325;
+    --destructive-foreground: 0.985 0 0;
+    --border: 0.88 0.02 260;
+    --input: 0.88 0.02 260;
+    --ring: 0.55 0.22 264;
+    --chart-1: 0.55 0.22 264;
+    --chart-2: 0.65 0.2 295;
+    --chart-3: 0.7 0.18 200;
+    --chart-4: 0.75 0.18 140;
+    --chart-5: 0.72 0.2 30;
+    --sidebar: 0.97 0.005 250;
+    --sidebar-foreground: 0.15 0.02 260;
+    --sidebar-primary: 0.55 0.22 264;
+    --sidebar-primary-foreground: 0.98 0 0;
+    --sidebar-accent: 0.92 0.03 260;
+    --sidebar-accent-foreground: 0.2 0.02 260;
+    --sidebar-border: 0.88 0.02 260;
+    --sidebar-ring: 0.55 0.22 264;
+  }
+
+  .dark {
+    --background: 0.13 0.025 265;
+    --foreground: 0.95 0.01 250;
+    --card: 0.17 0.03 265;
+    --card-foreground: 0.95 0.01 250;
+    --popover: 0.17 0.03 265;
+    --popover-foreground: 0.95 0.01 250;
+    --primary: 0.65 0.22 264;
+    --primary-foreground: 0.1 0.02 265;
+    --secondary: 0.22 0.04 265;
+    --secondary-foreground: 0.95 0.01 250;
+    --muted: 0.22 0.04 265;
+    --muted-foreground: 0.62 0.05 260;
+    --accent: 0.62 0.2 295;
+    --accent-foreground: 0.98 0 0;
+    --destructive: 0.65 0.22 27;
+    --destructive-foreground: 0.98 0 0;
+    --border: 0.95 0.01 250 / 10%;
+    --input: 0.95 0.01 250 / 12%;
+    --ring: 0.65 0.22 264;
+    --chart-1: 0.65 0.22 264;
+    --chart-2: 0.62 0.2 295;
+    --chart-3: 0.68 0.18 200;
+    --chart-4: 0.72 0.18 140;
+    --chart-5: 0.7 0.2 30;
+    --sidebar: 0.15 0.03 265;
+    --sidebar-foreground: 0.95 0.01 250;
+    --sidebar-primary: 0.65 0.22 264;
+    --sidebar-primary-foreground: 0.98 0 0;
+    --sidebar-accent: 0.22 0.04 265;
+    --sidebar-accent-foreground: 0.95 0.01 250;
+    --sidebar-border: 0.95 0.01 250 / 10%;
+    --sidebar-ring: 0.65 0.22 264;
+  }
+
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: "Plus Jakarta Sans", "Inter", system-ui, sans-serif;
+  }
+}
+
+.glass-card {
+  background: rgba(17, 24, 55, 0.65);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 1rem;
+}
+
+.light .glass-card {
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.gradient-btn {
+  background: linear-gradient(135deg, #38bdf8, #a855f7);
+  color: white;
+  font-weight: 600;
+  transition: opacity 0.2s;
+}
+.gradient-btn:hover {
+  opacity: 0.9;
+}
+.gradient-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+@keyframes pulse-glow {
+  0%,
+  100% {
+    box-shadow: 0 0 20px rgba(99, 102, 241, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(168, 85, 247, 0.5);
+  }
+}
+.glow-pulse {
+  animation: pulse-glow 3s infinite;
+}
